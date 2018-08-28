@@ -68,7 +68,7 @@ body { -webkit-animation: bugfix infinite 1s; }
 ---------------------------------*/
 #masthead {
      height: 100%;
-     min-height: 100px;
+     /* min-height: 100px; */
 }
 
 .nav-menu, .nav-menu > li, .nav-menu > li > a { 
