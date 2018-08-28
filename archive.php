@@ -1,10 +1,12 @@
 <?php get_header(); ?>
 
-			<div id="content">
+		<div id="content">
+			
+			<div class="container">
 
 				<div id="inner-content" class="row">
 
-						<main id="main" class="column column-70" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
+						<main id="main" class="column column-75" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
 
 							<?php
 							the_archive_title( '<h1 class="page-title">', '</h1>' );
@@ -68,7 +70,9 @@
 					<?php get_sidebar(); ?>
 
 				</div>
+				
+			</div>	
 
-			</div>
+		</div>
 
 <?php get_footer(); ?>

@@ -1,10 +1,12 @@
 <?php get_header(); ?>
 
-			<div id="content">
+		<div id="content">
+				
+			<div class="container">	
 
 				<div id="inner-content" class="row">
 
-						<main id="main" class="column column-70" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/WebPage">
+						<main id="main" class="column column-75" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/WebPage">
 
 							<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
@@ -41,5 +43,7 @@
 				</div>
 
 			</div>
+			
+		</div>	
 
 <?php get_footer(); ?>

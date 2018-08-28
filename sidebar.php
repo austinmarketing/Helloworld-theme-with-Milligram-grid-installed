@@ -1,3 +1,4 @@
+				
 				<div id="sidebar1" class="column column-25" role="complementary">
 
 					<?php if ( is_active_sidebar( 'sidebar1' ) ) : ?>
@@ -19,3 +20,4 @@
 					<?php endif; ?>
 
 				</div>
+			

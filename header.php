@@ -37,8 +37,10 @@
 		<div id="container">
 
 			<header class="header" id="masthead" role="banner" itemscope itemtype="http://schema.org/WPHeader">
-
-				<div id="inner-header" class="row">
+				<div class="container">
+				
+					<div id="inner-header" class="row">
+						
 					<?php //* @link http://anythinggraphic.net/responsive-mobile-navigation-techniques ?>
 						
 						<?php // logo added via customise section in wordpress ?>
@@ -49,8 +51,8 @@
 						<?php // bloginfo('description'); ?>
 										
 							<nav role="navigation" class="main-menu" itemscope itemtype="http://schema.org/SiteNavigationElement">	
-						<input type='checkbox' id='toggle'/>
-						<label for="toggle" class="toggle" data-open="Main Menu" data-close="Close Menu" onclick></label>
+								<input type='checkbox' id='toggle'/>
+								<label for="toggle" class="toggle" data-open="Main Menu" data-close="Close Menu" onclick></label>
 						<?php wp_nav_menu(array(
     					         'container' => false,                           // remove nav container
     					         'container_class' => 'menu cf',                 // class of container (should you choose to use it)
@@ -65,9 +67,10 @@
         			               'depth' => 0,                                 // limit the depth of the nav
     					         'fallback_cb' => ''                             // fallback function (if there is one)
 						)); ?>
-
-							</nav>
-
+						</nav>
+				
+					</div>
+				
 				</div>
 
 			</header>
