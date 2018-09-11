@@ -4,113 +4,13 @@ This is the core helloworld file where most of the
 main functions & features reside. If you have
 any custom functions, it would be best to put them
 in the functions.php file.
-
-Developed by: Austin Marketing
-URL: https://www.austinmarketing.co.uk
-
-  - head cleanup (remove rsd, uri links, junk css, ect)
-  - enqueueing scripts & styles
-  - theme support functions
-  - custom menu output & fallbacks
-  - related post function
-  - page-navi function
-  - removing <p> from around images
-  - customizing the post excerpt
-  - force sub-categories to use the parent category template
-
 */
-
-/*********************
-WP_HEAD GOODNESS
-The default wordpress head is
-a mess. Let's clean it up by
-removing all the junk we don't
-need.
-*********************/
-
-function helloworld_head_cleanup() {
-	// category feeds
-	remove_action( 'wp_head', 'feed_links_extra', 3 );
-	// post and comment feeds
-	remove_action( 'wp_head', 'feed_links', 2 );
-	// EditURI link
-	remove_action( 'wp_head', 'rsd_link' );
-	// windows live writer
-	remove_action( 'wp_head', 'wlwmanifest_link' );
-	// previous link
-	remove_action( 'wp_head', 'parent_post_rel_link', 10, 0 );
-	// start link
-	remove_action( 'wp_head', 'start_post_rel_link', 10, 0 );
-	// links for adjacent posts
-	remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0 );
-	// WP version
-	remove_action( 'wp_head', 'wp_generator' );
-	// shortlink
-	remove_action('wp_head', 'wp_shortlink_wp_head', 10, 0 );
-	// remove emoji script
-	remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
-	remove_action( 'wp_print_styles', 'print_emoji_styles' );
-	// remove WP version from css
-	add_filter( 'style_loader_src', 'helloworld_remove_wp_ver_css_js', 9999 );
-	// remove Wp version from scripts
-	add_filter( 'script_loader_src', 'helloworld_remove_wp_ver_css_js', 9999 );
-	// Remove s.w.or.g
-	add_filter( 'emoji_svg_url', '__return_false' );
-
-} /* end helloworld head cleanup */
-
-// Remove JSON API links in header html
-function remove_json_api () {
-    // Remove the REST API lines from the HTML Header
-    remove_action( 'wp_head', 'rest_output_link_wp_head', 10 );
-    remove_action( 'wp_head', 'wp_oembed_add_discovery_links', 10 );
-    // Remove the REST API endpoint.
-    remove_action( 'rest_api_init', 'wp_oembed_register_route' );
-    // Turn off oEmbed auto discovery.
-    add_filter( 'embed_oembed_discover', '__return_false' );
-    // Don't filter oEmbed results.
-    remove_filter( 'oembed_dataparse', 'wp_filter_oembed_result', 10 );
-    // Remove oEmbed discovery links.
-    remove_action( 'wp_head', 'wp_oembed_add_discovery_links' );
-    // Remove oEmbed-specific JavaScript from the front-end and back-end.
-    remove_action( 'wp_head', 'wp_oembed_add_host_js' );
-   // Remove all embeds rewrite rules.
-   add_filter( 'rewrite_rules_array', 'disable_embeds_rewrites' );
-}
-add_action( 'after_setup_theme', 'remove_json_api' );
-
-// remove WP version from RSS
-function helloworld_rss_version() { return ''; }
-
-// remove WP version from scripts
-function helloworld_remove_wp_ver_css_js( $src ) {
-	if ( strpos( $src, 'ver=' ) )
-		$src = remove_query_arg( 'ver', $src );
-	return $src;
-}
 
 // declare support for WooCommerce (hides message)
 add_action( 'after_setup_theme', 'woocommerce_support' );
 function woocommerce_support() {
     add_theme_support( 'woocommerce' );
 }
-
-// remove injected CSS for recent comments widget
-function helloworld_remove_wp_widget_recent_comments_style() {
-	if ( has_filter( 'wp_head', 'wp_widget_recent_comments_style' ) ) {
-		remove_filter( 'wp_head', 'wp_widget_recent_comments_style' );
-	}
-}
-
-// Remove All Yoast HTML Comments
-// https://gist.github.com/paulcollett/4c81c4f6eb85334ba076
-if (defined('WPSEO_VERSION')){
-  add_action('get_header',function (){ ob_start(function ($o){
-  return preg_replace('/^<!--.*?[Y]oast.*?-->$/mi','',$o); }); });
-  add_action('wp_head',function (){ ob_end_flush(); }, 999);
-}
-
-// disable comments functions
 
 // Disable support for comments and trackbacks in post types
 function df_disable_comments_post_types_support() {
@@ -166,11 +66,6 @@ add_filter( 'get_the_archive_title', function ($title) {
         }
     return $title;
 });
-
-// remove injected CSS from gallery
-function helloworld_gallery_style($css) {
-	return preg_replace( "!<style type='text/css'>(.*?)</style>!s", '', $css );
-}
 
 // force sub-categories to use the parent category template
 function new_subcategory_hierarchy() {  
@@ -363,11 +258,6 @@ function helloworld_page_navi() {
 /*********************
 RANDOM CLEANUP ITEMS
 *********************/
-
-// remove the p from around imgs (http://css-tricks.com/snippets/wordpress/remove-paragraph-tags-from-around-images/)
-function helloworld_filter_ptags_on_images($content){
-	return preg_replace('/<p>\s*(<a .*>)?\s*(<img .* \/>)\s*(<\/a>)?\s*<\/p>/iU', '\1\2\3', $content);
-}
 
 // This removes the annoying […] to a Read More link
 function helloworld_excerpt_more($more) {
