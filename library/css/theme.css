@@ -1,5 +1,5 @@
 @import 'import/milligram.css';
-@import 'import/milligram.min.css';
+/* @import 'import/milligram.min.css'; */
 @import 'import/responsive-menu.css';
 
 /*
@@ -63,6 +63,8 @@ template {
  *    user zoom.
  */
  html {
+  /* root size for rem measurements. Dont remove */
+  font-size: 62.5%; 
   font-family: sans-serif; 
   /* 1 */
   -ms-text-size-adjust: 100%; 
@@ -106,28 +108,28 @@ body {
 	padding-top: 0.5384615385em;
 }
 .screen-reader-text {
-	clip: rect(1px, 1px, 1px, 1px);
+	clip: rect(0.1rem, 0.1rem, 0.1rem, 0.1rem);
 	position: absolute !important;
-	height: 1px;
-	width: 1px;
+	height: 0.1rem;
+	width: 0.1rem;
 	overflow: hidden;
 }
 .screen-reader-text:focus {
 	background-color: #f1f1f1;
-	border-radius: 3px;
-	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+	border-radius: 0.3rem;
+	box-shadow: 0 0 0.2rem 0.2rem rgba(0, 0, 0, 0.6);
 	clip: auto !important;
 	color: #21759b;
 	display: block;
-	font-size: 14px;
+	font-size: 1.4rem;
 	font-size: 0.875rem;
 	font-weight: bold;
 	height: auto;
-	left: 5px;
+	left: 0.5rem;
 	line-height: normal;
-	padding: 15px 23px 14px;
+	padding: 1.5rem 2.3rem 1.4rem;
 	text-decoration: none;
-	top: 5px;
+	top: 0.5rem;
 	width: auto;
 	z-index: 100000; /* Above WP toolbar. */
 }
@@ -175,14 +177,14 @@ a:hover {
  * contexts in Firefox 4+, Safari 5, and Chrome.
  */
 h1 {
-  font-size: 2em;
+  font-size: 2.5rem;
   margin: 0.67em 0; }
 
 /**
  * Address styling not present in IE 8/9, Safari 5, and Chrome.
  */
 abbr[title] {
-  border-bottom: 1px dotted; }
+  border-bottom: 0.1rem dotted; }
 
 /**
  * Address style set to `bolder` in Firefox 4+, Safari 5, and Chrome.
@@ -234,7 +236,7 @@ kbd,
 pre,
 samp {
   font-family: monospace, serif;
-  font-size: 1em; }
+  font-size: 1.6rem; }
 
 /**
  * Improve readability of pre-formatted text in all browsers.
@@ -294,7 +296,7 @@ dd {
  * Addresses paddings set differently in IE6/7.
  */
 menu {
-  padding: 0 0 0 40px; }
+  padding: 0 0 0 4.0rem; }
 
 ol,
 ul {
@@ -341,7 +343,7 @@ figure {
  */
 fieldset {
   border: 1px solid #c0c0c0;
-  margin: 0 2px;
+  margin: 0 0.2rem;
   padding: 0.35em 0.625em 0.75em; }
 
 /**
@@ -525,8 +527,8 @@ Stylesheet: Alert Styles
 
 */
 .alert-help, .alert-info, .alert-error, .alert-success {
-  margin: 10px;
-  padding: 5px 18px;
+  margin: 1.0rem;
+  padding: 0.5rem 1.8rem;
   border: 1px solid; }
 
 .alert-help {
@@ -575,12 +577,12 @@ http://www.youtube.com/watch?v=hwdVpKiJzac
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-decoration: none;
   color: white;
-  font-size: 0.9em;
-  font-size: 34px;
-  line-height: 34px;
+  font-size: 1.0rem;
+  font-size: 3.0rem;
+  line-height: 3.4rem;
   font-weight: normal;
-  padding: 0 24px;
-  border-radius: 4px;
+  padding: 0 2.4rem;
+  border-radius: 4.0rem;
   border: 0;
   cursor: pointer;
   -webkit-transition: background-color 0.14s ease-in-out;
@@ -589,7 +591,7 @@ http://www.youtube.com/watch?v=hwdVpKiJzac
     color: white;
     text-decoration: none; }
   .blue-btn:active, .comment-reply-link:active, #submit:active {
-    top: 1px; }
+    top: 0.1rem; }
 
 /*
 An example button.
@@ -641,18 +643,18 @@ select,
 textarea,
 .field {
   display: block;
-  height: 40px;
-  line-height: 40px;
-  padding: 0 12px;
-  margin-bottom: 14px;
-  font-size: 1em;
+  height: 4.0rem;
+  line-height: 4.0rem;
+  padding: 0 1.2rem;
+  margin-bottom: 1.4rem;
+  font-size: 1.0rem;
   color: #5c6b80;
-  border-radius: 3px;
+  border-radius: 0.3rem;
   vertical-align: middle;
   box-shadow: none;
   border: 0;
   width: 100%;
-  max-width: 400px;
+  max-width: 40rem;
   font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
   background-color: #eaedf2;
   -webkit-transition: background-color 0.24s ease-in-out;
@@ -879,7 +881,7 @@ input[type="password"] {
 
 textarea {
   max-width: 100%;
-  min-height: 120px;
+  min-height: 12rem;
   line-height: 1.5em; }
 
 select {
@@ -912,7 +914,7 @@ GENERAL STYLES
 *********************/
 body {
   font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 100%;
+  /* font-size: 100%; */
   line-height: 1.5;
   /* color: #b8b8c2; */
   -webkit-font-smoothing: antialiased; 
@@ -991,26 +993,26 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
     text-decoration: none; }
 
 h1, .h1 {
-  font-size: 2.5em;
+  font-size: 2.5rem;
   line-height: 1.333em; }
 
 h2, .h2 {
-  font-size: 1.75em;
+  font-size: 1.75rem;
   line-height: 1.4em;
   margin-bottom: 0.375em; }
 
 h3, .h3 {
-  font-size: 1.125em; }
+  font-size: 1.125rem; }
 
 h4, .h4 {
-  font-size: 1.1em;
+  font-size: 1.1rem;
   font-weight: 700; }
 
 h5, .h5 {
-  font-size: 0.846em;
+  font-size: 0.8rem;
   line-height: 2.09em;
   text-transform: uppercase;
-  letter-spacing: 2px; }
+  letter-spacing: 0.2rem; }
 
 /*********************
 HEADER STYLES
@@ -1018,11 +1020,14 @@ HEADER STYLES
 .header {
 }
 
+#masthead {
+	background-color: #fff;
+}
+
 #logo {
   margin: 0.75em 0; }
-  #logo a {
-	  
-}
+  
+#logo a {}
 
 #contact-call-to-action {
 	display: table-cell;
@@ -1073,7 +1078,7 @@ header nav {
       */ }
     .nav li ul.sub-menu li a,
     .nav li ul.children li a {
-      padding-left: 30px; }
+      padding-left: 3.0rem; }
 
 /* end .nav */
 /*********************
@@ -1128,24 +1133,24 @@ POSTS & CONTENT STYLES
     border: 1px solid #eaedf2;
     margin-bottom: 1.5em; }
     .entry-content table caption {
-      margin: 0 0 7px;
-      font-size: 0.75em;
+      margin: 0 0 0.7rem;
+      font-size: 0.75rem;
       color: #9fa6b4;
       text-transform: uppercase;
-      letter-spacing: 1px; }
+      letter-spacing: 0.1rem; }
   .entry-content tr {
-    border-bottom: 1px solid #eaedf2; }
+    border-bottom: 0.1rem solid #eaedf2; }
     .entry-content tr:nth-child(even) {
       background-color: #f8f9fa; }
   .entry-content td {
-    padding: 7px;
-    border-right: 1px solid #eaedf2; }
+    padding: 0.7rem;
+    border-right: 0.1rem solid #eaedf2; }
     .entry-content td:last-child {
       border-right: 0; }
   .entry-content th {
     background-color: #f8f9fa;
-    border-bottom: 1px solid #eaedf2;
-    border-right: 1px solid #eaedf2; }
+    border-bottom: 0.1rem solid #eaedf2;
+    border-right: 0.1rem solid #eaedf2; }
     .entry-content th:last-child {
       border-right: 0; }
   .entry-content blockquote {
@@ -1156,7 +1161,7 @@ POSTS & CONTENT STYLES
     color: /* #9fa6b4; */ }
   .entry-content dd {
     margin-left: 0;
-    font-size: 0.9em;
+    font-size: 0.9rem;
     color: #787878;
     margin-bottom: 1.5em; }
   .entry-content img {
@@ -1173,24 +1178,24 @@ POSTS & CONTENT STYLES
   .entry-content pre {
     background: #323944;
     color: #f8f9fa;
-    font-size: 0.9em;
+    font-size: 0.9rem;
     padding: 1.5em;
     margin: 0 0 1.5em;
-    border-radius: 3px; }
+    border-radius: 0.3rem; }
 
 /* end .entry-content */
 .wp-caption {
   max-width: 100%;
   background: #eee;
-  padding: 5px;
+  padding: 0.5rem;
   /* images inside wp-caption */ }
   .wp-caption img {
     max-width: 100%;
     margin-bottom: 0;
     width: 100%; }
   .wp-caption p.wp-caption-text {
-    font-size: 0.85em;
-    margin: 4px 0 7px;
+    font-size: 0.85rem;
+    margin: 0.4rem 0 0.7rem;
     text-align: center; }
 
 /* end .wp-caption */
@@ -1215,20 +1220,20 @@ PAGE NAVI STYLES
     white-space: nowrap;
     padding: 0;
     clear: both;
-    border-radius: 3px; }
+    border-radius: 0.3rem; }
   .pagination li {
     padding: 0;
     margin: 0;
     float: left;
     display: inline;
     overflow: hidden;
-    border-right: 1px solid #eaedf2; }
+    border-right: 0.1rem solid #eaedf2; }
   .pagination a, .pagination span {
     margin: 0;
     text-decoration: none;
     padding: 0;
     line-height: 1em;
-    font-size: 1em;
+    font-size: 1.0rem;
     font-weight: normal;
     padding: 0.75em;
     min-width: 1em;
@@ -1259,7 +1264,7 @@ COMMENT STYLES
 #comments-title {
   padding: 0.75em;
   margin: 0;
-  border-top: 1px solid #f8f9fa;
+  border-top: 0.1rem solid #f8f9fa;
   /* number of comments span */ }
 
 .commentlist {
@@ -1271,22 +1276,22 @@ COMMENT STYLES
   clear: both;
   overflow: hidden;
   padding: 1.5em;
-  border-bottom: 1px solid #f8f9fa;
+  border-bottom: 0.1rem solid #f8f9fa;
   /* vcard */
   /* end .commentlist .vcard */
   /* end children */
   /* general comment classes */ }
   .comment .comment-author {
-    padding: 7px;
+    padding: 0.7rem;
     border: 0; }
   .comment .vcard {
-    margin-left: 50px; }
+    margin-left: 5.0rem; }
     .comment .vcard cite.fn {
       font-weight: 700;
       font-style: normal; }
     .comment .vcard time {
       display: block;
-      font-size: 0.9em;
+      font-size: 0.9rem;
       font-style: italic; }
       .comment .vcard time a {
         color: #9fa6b4;
@@ -1295,7 +1300,7 @@ COMMENT STYLES
           text-decoration: underline; }
     .comment .vcard .avatar {
       position: absolute;
-      left: 16px;
+      left: 1.6rem;
       border-radius: 50%; }
   .comment:last-child {
     margin-bottom: 0; }
@@ -1310,8 +1315,8 @@ COMMENT STYLES
     margin-top: 0; }
   .comment:not(.depth-1) {
     margin-top: 0;
-    margin-left: 7px;
-    padding: 7px; }
+    margin-left: 0.7rem;
+    padding: 0.7rem; }
   .comment.odd {
     background-color: white; }
   .comment.even {
@@ -1321,29 +1326,29 @@ COMMENT STYLES
 /* comment content */
 .comment_content p {
   margin: 0.7335em 0 1.5em;
-  font-size: 1em;
+  font-size: 1rem;
   line-height: 1.5em; }
 
 /* end .commentlist .comment_content */
 /* comment reply link */
 .comment-reply-link {
-  font-size: 0.9em;
+  font-size: 0.9rem;
   float: right; }
 
 /* end .commentlist .comment-reply-link */
 /* edit comment link */
 .comment-edit-link {
   font-style: italic;
-  margin: 0 7px;
+  margin: 0 0.7rem;
   text-decoration: none;
-  font-size: 0.9em; }
+  font-size: 0.9rem; }
 
 /******************************************************************
 COMMENT FORM STYLES
 ******************************************************************/
 .comment-respond {
   padding: 1.5em;
-  border-top: 1px solid #f8f9fa; }
+  border-top: 0.1rem solid #f8f9fa; }
 
 #reply-title {
   margin: 0; }
@@ -1361,12 +1366,12 @@ COMMENT FORM STYLES
 .form-allowed-tags {
   padding: 1.5em;
   background-color: #f8f9fa;
-  font-size: 0.9em; }
+  font-size: 0.9rem; }
 
 /* comment submit button */
 #submit {
   float: right;
-  font-size: 1em; }
+  font-size: 1.0rem; }
 
 /* comment form title */
 #comment-form-title {
@@ -1376,11 +1381,11 @@ COMMENT FORM STYLES
 /* logged in comments */
 /* allowed tags */
 #allowed_tags {
-  margin: 1.5em 10px 0.7335em 0; }
+  margin: 1.5em 1.0rem 0.7335em 0; }
 
 /* no comments */
 .nocomments {
-  margin: 0 20px 1.1em; }
+  margin: 0 2.0rem 1.1em; }
 
 /*********************
 SIDEBARS & ASIDES
@@ -1392,8 +1397,8 @@ SIDEBARS & ASIDES
   background-color: white;
   padding: 1.5em;
   text-align: center;
-  border: 1px solid #cccccc;
-  border-radius: 2px;
+  border: 0.1rem solid #cccccc;
+  border-radius: 0.2rem;
   margin-bottom: 1.5em; }
 
 /*********************
@@ -1414,7 +1419,7 @@ FOOTER STYLES
 	position: absolute;
 	top: 1em;
 	right: 2.5em;
-	font-size: 3em;
+	font-size: 3.0rem;
 }
 .main-menu .toggle:after {
 	background-color: transparent;
@@ -1431,6 +1436,10 @@ FOOTER STYLES
   border-top: 0.3em double #fff;
   border-bottom: 0.1em solid #fff;
   padding-top: 0.1em;
+}
+
+#menu-main-nav {
+	z-index: 1000;
 }
 
 #menu-main-nav a {
@@ -1562,7 +1571,7 @@ you can add resource intensive styles.
   LAYOUT & GRID STYLES
   *********************/
   .wrap {
-    width: 760px; }
+    width: 76rem; }
 
   /*********************
   HEADER STYLES
@@ -1597,7 +1606,7 @@ you can add resource intensive styles.
       .nav li ul.sub-menu,
       .nav li ul.children {
         margin-top: 0;
-        border: 1px solid #ccc;
+        border: 0.1rem solid #ccc;
         border-top: 0;
         position: absolute;
         visibility: hidden;
@@ -1612,11 +1621,11 @@ you can add resource intensive styles.
           */ }
           .nav li ul.sub-menu li a,
           .nav li ul.children li a {
-            padding-left: 10px;
+            padding-left: 1.0rem;
             border-right: 0;
             display: block;
-            width: 180px;
-            border-bottom: 1px solid #ccc; }
+            width: 18rem;
+            border-bottom: 0.1rem solid #ccc; }
           .nav li ul.sub-menu li:last-child a,
           .nav li ul.children li:last-child a {
             border-bottom: 0; }
@@ -1636,11 +1645,11 @@ you can add resource intensive styles.
     margin-top: 2.2em; }
 
   .widgettitle {
-    border-bottom: 2px solid #e2e2e6;
+    border-bottom: 0.2rem solid #e2e2e6;
     margin-bottom: 0.75em; }
 
   .widget {
-    padding: 0 10px;
+    padding: 0 1.0rem;
     margin: 2.2em 0; }
     .widget ul li {
       margin-bottom: 0.75em;
@@ -1705,7 +1714,7 @@ you can add resource intensive styles.
   
   
   .wrap {
-    width: 1040px; } 
+    width: 104rem; } 
 
     
     }
@@ -1730,8 +1739,8 @@ li ul li {
 /*Prevent text wrapping*/
 li ul li a {
     width: auto;
-    min-width: 100px;
-    padding: 0 20px;
+    min-width: 10rem;
+    padding: 0 2.0rem;
 }
 /*Display the dropdown on hover*/
 ul li a:hover + .sub-menu, .sub-menu:hover {
@@ -1743,7 +1752,7 @@ ul {
     }
     /*Create vertical spacing*/
     li {
-        margin-bottom: 1px;
+        margin-bottom: 0.1rem;
     }
     /*Make all menu links full width*/
     ul li, li a {
@@ -1751,7 +1760,7 @@ ul {
     }
     
     ul.sub-menu {
-	    margin-top: -10px;
+	    margin-top: -1.0rem;
     }
     
     body {
@@ -1764,7 +1773,7 @@ ul {
 	 background-image:url('data:image/svg+xml;utf-8,\<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 90.35 174.99"><defs><style>.cls-1{fill:white;}</style></defs><title>jc-arrow-right</title><polygon class="cls-1" points="90.35 87.5 14.63 0 0 12.66 64.77 87.5 0 162.33 14.63 174.99 90.35 87.5 90.35 87.5 90.35 87.5"/></svg>');
 	 background-repeat: no-repeat;
 	 background-position: center; 
-	 background-size: 6px;
+	 background-size: 0.6rem;
 	 background-position-x: 85%; 
 	 }
 	 
@@ -1772,7 +1781,7 @@ ul {
 	 background-image:url('data:image/svg+xml;utf-8,\<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 174.99 90.35"><defs><style>.cls-1{fill:white;}</style></defs><title>jc-arrow-bottom</title><polygon class="cls-1" points="87.5 90.35 174.99 14.63 162.33 0 87.5 64.77 12.66 0 0 14.63 87.5 90.35 87.5 90.35 87.5 90.35"/></svg>');
 	 background-repeat: no-repeat;
 	 background-position: center; 
-	 background-size: 12px;
+	 background-size: 1.2rem;
 	 background-position-x: 85%; 
 	 }
 	 
@@ -1875,7 +1884,7 @@ be set to display none.
     content: ""; }
 
   pre, blockquote {
-    border: 1px solid #999;
+    border: 0.1rem solid #999;
     page-break-inside: avoid; }
 
   thead {
