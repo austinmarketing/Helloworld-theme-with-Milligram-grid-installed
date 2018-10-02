@@ -1,6 +1,8 @@
 <?php get_header(); ?>
 
-			<div id="content">
+		<div id="content">
+				
+			<div class="container">
 
 				<div id="inner-content" class="row">
 
@@ -37,7 +39,9 @@
 					</main>
 
 				</div>
-
+				
 			</div>
+
+		</div>
 
 <?php get_footer(); ?>

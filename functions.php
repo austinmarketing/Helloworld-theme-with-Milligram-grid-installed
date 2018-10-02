@@ -14,6 +14,9 @@ require_once( 'library/helloworld.php' );
 // CUSTOMIZE THE WORDPRESS ADMIN (off by default)
 // require_once( 'library/admin.php' );
 
+/* Disallow file edit - removes theme editor from admin */
+define( 'DISALLOW_FILE_EDIT', true );
+
 /*********************
 Put on your helloworld
 Let's get everything up and running.
@@ -57,7 +60,7 @@ function helloworld_ahoy() {
   add_action( 'widgets_init', 'helloworld_register_sidebars' );
 
   // cleaning up random code around images
-  add_filter( 'the_content', 'helloworld_filter_ptags_on_images' );
+  /* add_filter( 'the_content', 'helloworld_filter_ptags_on_images' ); */
   // cleaning up excerpt
   add_filter( 'excerpt_more', 'helloworld_excerpt_more' );
 
@@ -254,5 +257,18 @@ $file_types = array_merge($file_types, $new_filetypes );
 return $file_types;
 }
 add_action('upload_mimes', 'add_file_types_to_uploads');
+
+/**
+ * Remove Gutenberg Styles on Frontend (This needs to be in the theme functions file until this is fixed)
+ */
+ remove_action( 'wp_enqueue_scripts', 'gutenberg_common_scripts_and_styles' ); 
+ 
+// This removes the annoying […] to a Read More link
+function helloworld_excerpt_more($more) {
+	global $post;
+	// edit here if you like
+	return '...  <a class="excerpt-read-more" href="'. get_permalink( $post->ID ) . '" title="'. __( 'Read ', 'helloworld' ) . esc_attr( get_the_title( $post->ID ) ).'">'. __( 'Read more &raquo;', 'helloworld' ) .'</a>';
+}
+
 
 /* DON'T DELETE THIS CLOSING TAG */ ?>

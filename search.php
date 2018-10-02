@@ -1,10 +1,12 @@
 <?php get_header(); ?>
 
-			<div id="content">
+		<div id="content">
+			
+			<div class="container">
 
 				<div id="inner-content" class="row">
 
-					<main id="main" class="column column-70" role="main">
+					<main id="main" class="column column-75" role="main">
 						<h1 class="archive-title"><span><?php _e( 'Search Results for:', 'helloworld' ); ?></span> <?php echo esc_attr(get_search_query()); ?></h1>
 
 						<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
@@ -68,7 +70,9 @@
 							<?php get_sidebar(); ?>
 
 					</div>
-
+					
 			</div>
+			
+		</div>	
 
 <?php get_footer(); ?>

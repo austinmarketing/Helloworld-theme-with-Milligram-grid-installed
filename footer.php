@@ -1,6 +1,10 @@
-			<footer class="footer" role="contentinfo" itemscope itemtype="http://schema.org/WPFooter">
+		<footer class="footer" role="contentinfo" itemscope itemtype="http://schema.org/WPFooter">
+				
+			<div class="container">	
 
 				<div id="inner-footer" class="row">
+					
+					<div class="column">
 
 					<nav role="navigation">
 						<?php wp_nav_menu(array(
@@ -29,12 +33,16 @@
 						?>
 						Website by <a href="http://www.austinmarketing.co.uk/?utm_source=<?php echo $campaign_source ?>&utm_medium=referal" title="Marketing Agency in Surrey" rel="noopener">Austin Marketing</a>.
 					</p>
+					
+					</div>
 
 				</div>
+				
+			</div>	
 
-			</footer>
+		</footer>
 
-		</div>
+	</div>
 
 		<?php // all js scripts are loaded in library/helloworld.php ?>
 		<?php wp_footer(); ?>
